@@ -5,7 +5,6 @@ import 'package:music_app/common/widget/custom_widget.dart';
 import 'package:music_app/common/widget/defeault_textfield.dart';
 import 'package:music_app/common/widget/orange_button.dart';
 import 'package:music_app/common/widget/password_textfield.dart';
-import 'package:music_app/features/auth/login/screens/login_page.dart';
 import 'package:music_app/features/auth/register/controller/register_controller.dart';
 import 'package:music_app/features/auth/username/screens/username_page.dart';
 import '../../../../config/theme/custom_colors.dart';

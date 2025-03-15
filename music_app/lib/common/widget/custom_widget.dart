@@ -30,7 +30,7 @@ final class CustomWidgets {
     );
   }
 
-  static AppBar appBar(String title, {bool? backButtonVisibility}) {
+  static AppBar appBar(String title, {bool? backButtonVisibility, BuildContext? context}) {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
@@ -46,7 +46,13 @@ final class CustomWidgets {
       leading: Visibility(
         visible: backButtonVisibility ?? true,
         child: GestureDetector(
-          onTap: () => Get.back(),
+          onTap: () {
+            if (context != null) {
+              Navigator.of(context).pop();
+            } else {
+              Get.back();
+            }
+          },
           child: Container(
             width: 40,
             height: 40,

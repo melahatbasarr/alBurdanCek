@@ -7,8 +7,9 @@ import 'package:music_app/features/auth/login/controller/login_controller.dart';
 import 'package:music_app/features/auth/login/repository/login_repository.dart';
 import 'package:music_app/features/auth/register/controller/register_controller.dart';
 import 'package:music_app/features/auth/register/repository/register_repository.dart';
+import 'package:music_app/features/player/controller/player_controller.dart';
 import 'package:music_app/features/settings/update_profile/controller/update_profile_controller.dart';
-import 'package:music_app/features/onboarding/onboarding_page.dart';
+import 'package:music_app/features/splash/screens/splash_page.dart';
 
 void main() {
   // GetX bağımlılıkları başlatılıyor
@@ -22,6 +23,7 @@ void main() {
       () => RegisterController(registerRepository: registerRepository));
   Get.lazyPut<UsernameController>(
       () => UsernameController(usernameRepository: usernameRepository));
+  Get.put(PlayerController(), permanent: true);
 
   // Uygulamayı başlatma
   runApp(
@@ -45,7 +47,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: false,
         fontFamily: "Poppins Medium",
       ),
-      home: const OnBoardingPage(),
+      home: const SplashPage(),
     );
   }
 }

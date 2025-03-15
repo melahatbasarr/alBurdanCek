@@ -57,6 +57,8 @@ final class _LoginPageState extends State<LoginPage> {
               _buildRegisterText(),
               const SizedBox(height: 20),
               _buildSocialLoginButton(),
+              const SizedBox(height: 15),
+              _buildContinueWithoutLoginButton(),
             ],
           ),
         ),
@@ -149,6 +151,30 @@ final class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildContinueWithoutLoginButton() {
+    return SizedBox(
+      width: double.infinity,
+      child: TextButton(
+        onPressed: () {
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => const NavigatorPage()),
+            (route) => false,
+          );
+        },
+        child: const Text(
+          "Continue without login",
+          style: TextStyle(
+            color: CustomColors.whiteText,
+            fontSize: 16,
+            fontFamily: "Poppins Regular",
+            decoration: TextDecoration.underline,
+          ),
         ),
       ),
     );

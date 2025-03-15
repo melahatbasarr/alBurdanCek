@@ -5,6 +5,7 @@ import 'package:music_app/common/widget/custom_widget.dart';
 import 'package:music_app/config/theme/custom_colors.dart';
 import 'package:music_app/features/auth/login/screens/login_page.dart';
 import 'package:music_app/features/settings/about/screens/about_page.dart';
+import 'package:music_app/features/settings/mailverification/screens/mail_email_verification_page.dart';
 import 'package:music_app/features/settings/privacy_social/screens/privacy_social_page.dart';
 import 'package:music_app/features/settings/settings/controller/settings_controller.dart';
 import 'package:music_app/features/settings/update_profile/screens/update_profile_page.dart';
@@ -120,6 +121,41 @@ final class _SettingsPageState extends State<SettingsPage> {
                         fontSize: 14,
                       ),
                     )),
+                const SizedBox(height: 8),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const MailEmailVerificationPage()),
+                    );
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    decoration: BoxDecoration(
+                      color: Colors.orange.withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        Icon(
+                          Icons.email_outlined,
+                          color: Colors.orange,
+                          size: 16,
+                        ),
+                        SizedBox(width: 5),
+                        Text(
+                          "Verify email",
+                          style: TextStyle(
+                            color: Colors.orange,
+                            fontSize: 12,
+                            fontFamily: "Poppins Medium",
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
